@@ -12,9 +12,8 @@ const Olives = () => {
 const Pepperoni = () => {
     return (<li>Pepperoni</li>)
 }*/
-
 const Topping = (props) => {
-    console.log('PROPS: ', props)
+    //console.log('PROPS: ', props)
     const isUnderlined = (props.type === props.favoriteTopping)
     return <li className={isUnderlined ? 'underlined': ''} onClick={() => props.handleClick(props.type)}>{props.type}</li>
 }
@@ -23,7 +22,7 @@ const Topping = (props) => {
 class ToppingList extends Component {
     constructor(props) {
         super(props)
-        console.log('Props in Topping List Component', this.props)
+        //console.log('Props in Topping List Component', this.props)
         this.state = {
             favoriteTopping: 'Cheese'
         }
@@ -38,7 +37,12 @@ class ToppingList extends Component {
         })
     }
 
+    componentDidMount() {
+        console.log('Topping List mounted! ', this.state)
+    }
+
     render() {
+        console.log('topping list RENDERED!')
         return (
             <div>
                 <h1>Your favorite pizza topping is: {this.state.favoriteTopping}</h1>
