@@ -24,7 +24,8 @@ class ToppingList extends Component {
         super(props)
         //console.log('Props in Topping List Component', this.props)
         this.state = {
-            favoriteTopping: 'Cheese'
+            favoriteTopping: 'Cheese',
+            toppings: ['Cheese', 'Pepperoni', 'Olives']
         }
         //Don't forget to bind the this context to your handleClick!
         this.handleClick = this.handleClick.bind(this) 
@@ -60,9 +61,16 @@ class ToppingList extends Component {
                     - Props are very similar to HTML attributes and they're properties that are used to pass data from one React component to another. 
                     - Each React component has its own props object and you can pass props to BOTH classical and functional components. 
                     */}
-                    <Topping type='Cheese' handleClick={this.handleClick} favoriteTopping={this.state.favoriteTopping}/>
+                    {/*<Topping type='Cheese' handleClick={this.handleClick} favoriteTopping={this.state.favoriteTopping}/>
                     <Topping type='Pepperoni' handleClick={this.handleClick} favoriteTopping={this.state.favoriteTopping} />
-                    <Topping type='Olives' handleClick={this.handleClick} favoriteTopping={this.state.favoriteTopping} />
+                    <Topping type='Olives' handleClick={this.handleClick} favoriteTopping={this.state.favoriteTopping} />*/
+
+                    
+                        /* Instead of rendering the Topping component three seperate times we can just map through our toppings array! */
+                        this.state.toppings.map((topping, index )=>( 
+                        <Topping key={index} type={topping} favoriteTopping={this.state.favoriteTopping} handleClick={this.handleClick}/>)
+                      )
+                    }
                 </ul>
             </div>
         )
