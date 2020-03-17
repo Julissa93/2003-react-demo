@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import MyFirstComponent from './myFirstComponent'
+//import MyFirstComponent from './myFirstComponent'
+import ToppingList from './ToppingList'
 
 ReactDOM.render(
-    <MyFirstComponent />,
+    <ToppingList />,
     document.getElementById('app')
 )
