@@ -1,0 +1,22 @@
+body {
+  padding: 10px;
+  font-family: sans-serif;
+  position: relative;
+  height: 100vh;
+}
+
+body::before {
+  background: url(https://previews.123rf.com/images/bbgreg/bbgreg1705/bbgreg170500016/77652949-pizza-slice-seamless-pattern-vector-background-fast-food.jpg);
+  opacity: 0.25;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: '';
+}
+
+.underlined {
+  text-decoration: underline hotpink
+}
